@@ -11,31 +11,20 @@
         alt=""
         style="width: 120px; height: 31px"
       /> -->
-      <div v-if="!isCollapse"
-           class="sidebar-logo">
-        <img src="@/assets/login/logo.png"
-             style="width: 120px; height: 31px">
+      <div v-if="!isCollapse" class="sidebar-logo">
+        <img src="@/assets/login/logo.png" style="width: 120px; height: 31px">
       </div>
-      <div v-else
-           class="sidebar-logo-mini">
+      <div v-else class="sidebar-logo-mini">
         <img src="@/assets/login/mini-logo.png">
       </div>
     </div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
-      <el-menu :default-openeds="defOpen"
-               :default-active="defAct"
-               :collapse="isCollapse"
-               :background-color="variables.menuBg"
-               :text-color="variables.menuText"
-               :active-text-color="variables.menuActiveText"
-               :unique-opened="false"
-               :collapse-transition="false"
-               mode="vertical">
-        <sidebar-item v-for="route in routes"
-                      :key="route.path"
-                      :item="route"
-                      :base-path="route.path"
-                      :is-collapse="isCollapse" />
+      <el-menu :default-openeds="defOpen" :default-active="defAct" :collapse="isCollapse"
+        :background-color="variables.menuBg" :text-color="variables.menuText"
+        :active-text-color="variables.menuActiveText" :unique-opened="false" :collapse-transition="false"
+        mode="vertical">
+        <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path"
+          :is-collapse="isCollapse" />
         <!-- <div class="sub-menu">
           <div class="avatarName">
             {{ name }}
@@ -138,16 +127,19 @@ export default class extends Vue {
   background-color: #ffc100;
   padding: 15px 0 0;
   height: 60px;
+
   img {
     display: inline-block;
   }
 }
+
 .sidebar-logo-mini {
   img {
     width: 30px;
     height: 30px;
   }
 }
+
 .el-scrollbar {
   height: 100%;
   background-color: rgb(52, 55, 68);
